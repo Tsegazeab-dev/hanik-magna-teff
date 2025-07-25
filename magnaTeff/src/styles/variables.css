@@ -1,0 +1,24 @@
+:root {
+  --primary-color: #e67c30; /* Vibrant orange */
+  --primary-color-rgb: 230, 124, 48; /* RGB equivalent */
+  --secondary-color: #d4a373; /* Complementary muted orange */
+  --secondary-color-rgb: 212, 163, 115;
+  --background: #fff9f2; /* Very light orange/cream */
+  --title-font-color: #e67c30; /* Matching primary orange */
+  --body-font-color: #5a4a42; /* Dark brown for contrast */
+  --dark-body-font-color: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* Brighter for dark backgrounds */
+  --bg-color-even: #f8e8dc; /* Light orange tint */
+  --bg-color-odd: #fdf1e8; /* Even lighter orange tint */
+  --bg-dark-1: #e67c30; /* Primary orange for dark sections */
+  --bg-dark-1-rgb: 230, 124, 48;
+  --bg-dark-2: #c86e2b; /* Slightly darker orange */
+  --bg-dark-3: #b86326; /* Even darker for depth */
+  --bg-dark-3-rgb: 184, 99, 38;
+  --bg-grey: #f5ebe0; /* Warm gray with orange undertone */
+  --bg-light: #fae5d3; /* Light orange background */
+}
