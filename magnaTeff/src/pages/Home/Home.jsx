@@ -146,7 +146,7 @@ const Home = () => {
         </div>
       </header>
 
-      {/*  About us start */}
+      {/*  Welcome */}
       <section id="about">
         <div className="container">
           <div className="row g-4 align-items-center">
