@@ -5,17 +5,19 @@ import whiteLogo from "../../assets/images/logo/logo-magna-white.webp";
 import injeraPic1 from "../../assets/images/misc/injera.webp";
 import teffPic1 from "../../assets/images/misc/magna-teff-8.webp";
 import hanikLogo from "../../assets/images/logo/Hanik-logo.webp";
-import aboutPic1 from "../../assets/images/misc/magna-teff-1.webp";
+import aboutPic1 from "../../assets/images/misc/happy-ethiopian-farmer.webp";
+import aboutPic2 from "../../assets/images/misc/magna-teff-3.webp";
 import callToAction from "../../assets/images/misc/bg.webp";
 import glutenFree from "../../assets/images/misc/gluten-free.png";
 import productPackage from "../../assets/images/misc/magna-package.png";
-import loveTeff from "../../assets/images/misc/magna-teff-7.webp";
-import traditionalPicture from "../../assets/images/misc/magna-teff-10.webp";
+import healthyFamily from "../../assets/images/misc/healthy-family.webp";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { GoIssueClosed } from "react-icons/go";
 import { MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import {
+  FaAngleLeft,
+  FaAngleRight,
   FaFacebookF,
   FaInstagram,
   FaRegClock,
@@ -108,20 +110,20 @@ const Home = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link className="menu-item" to="#about">
+                      <a className="menu-item" href="#about">
                         About
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link className="menu-item" to="#products">
+                      <a className="menu-item" href="#products">
                         Products
-                      </Link>
+                      </a>
                     </li>
 
                     <li>
-                      <Link className="menu-item" to="#contact">
+                      <a className="menu-item" href="#contact">
                         Contact
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -152,6 +154,211 @@ const Home = () => {
           </div>
         </div>
       </header>
+
+      {/* Hero Section */}
+      <section
+        id="section-intro"
+        className="slider-light no-top no-bottom relative overflow-hidden z-1000"
+      >
+        <div className="v-center relative">
+          <div className="swiper">
+            {/* <!-- Additional required wrapper --> */}
+            <div className="swiper-wrapper">
+              {/* <!-- Slides --> */}
+              <div className="swiper-slide">
+                <div className="swiper-inner jarallax">
+                  <img
+                    src="images/shop/slider/bg.webp"
+                    className="jarallax-img"
+                    alt=""
+                  />
+                  <div className="sw-caption z-1000">
+                    <div className="container">
+                      <div className="row g-4 align-items-center justify-content-between">
+                        <div className="spacer-double"></div>
+
+                        <div className="col-lg-5">
+                          <div className="spacer-single"></div>
+                          <div className="sw-text-wrapper">
+                            <div className="subtitle">Best Quality Plants</div>
+                            <h2 className="slider-title text-uppercase mb-4">
+                              Discover Amazing{" "}
+                              <span className="id-color-2">variety of plants</span>
+                            </h2>
+                            <p className="slider-text">
+                              From vibrant flowering plants to lush tropical
+                              greens, we offer an incredible variety to turn
+                              your space into a living paradise.
+                            </p>
+
+                            <div className="d-flex mb-4 slider-extra xs-hide">
+                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
+                                <img
+                                  src="images/shop/svg/coupon-svgrepo-com.svg"
+                                  className="w-40 mb-1"
+                                  alt=""
+                                />
+                                <h6 className="mb-0">Special Price</h6>
+                              </div>
+
+                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
+                                <img
+                                  src="images/shop/svg/shipped-truck-svgrepo-com.svg"
+                                  className="w-40 mb-1"
+                                  alt=""
+                                />
+                                <h6 className="mb-0">Free Delivery</h6>
+                              </div>
+
+                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
+                                <img
+                                  src="images/shop/svg/recommended-like-svgrepo-com.svg"
+                                  className="w-40 mb-1"
+                                  alt=""
+                                />
+                                <h6 className="mb-0">Guarantee</h6>
+                              </div>
+                            </div>
+
+                            <a
+                              className="btn-main mb10 mb-3"
+                              href="shop-shop-all.html"
+                            >
+                              Shop Now
+                            </a>
+                          </div>
+                        </div>
+
+                        <div className="col-lg-6">
+                          <div className="relative">
+                            <div className="abs abs-middle bg-blur overlay-white-70 w-250px p-4 rounded-1">
+                              <h5>Algonema Plant with Teracota Pot</h5>
+                              <div className="de-rating-ext">
+                                <span className="d-stars">
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                </span>
+                              </div>
+                            </div>
+                            <img
+                              src="images/shop/slider/1.webp"
+                              className="w-100"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div className="spacer-single"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* <!-- Slides --> */}
+              <div className="swiper-slide">
+                <div className="swiper-inner jarallax">
+                  <img
+                    src="images/shop/slider/bg.webp"
+                    className="jarallax-img"
+                    alt=""
+                  />
+                  <div className="sw-caption z-1000">
+                    <div className="container">
+                      <div className="row g-4 align-items-center justify-content-between">
+                        <div className="spacer-double"></div>
+
+                        <div className="col-lg-5">
+                          <div className="spacer-single"></div>
+                          <div className="sw-text-wrapper">
+                            <div className="subtitle">Best Quality Plants</div>
+                            <h2 className="slider-title text-uppercase mb-4">
+                              Discover Amazing{" "}
+                              <span className="id-color-2">variety of plants</span>
+                            </h2>
+
+                            <div className="d-flex mb-4 slider-extra xs-hide">
+                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
+                                <img
+                                  src="images/shop/svg/coupon-svgrepo-com.svg"
+                                  className="w-40 mb-1"
+                                  alt=""
+                                />
+                                <h6 className="mb-0">Special Price</h6>
+                              </div>
+
+                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
+                                <img
+                                  src="images/shop/svg/shipped-truck-svgrepo-com.svg"
+                                  className="w-40 mb-1"
+                                  alt=""
+                                />
+                                <h6 className="mb-0">Free Delivery</h6>
+                              </div>
+
+                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
+                                <img
+                                  src="images/shop/svg/recommended-like-svgrepo-com.svg"
+                                  className="w-40 mb-1"
+                                  alt=""
+                                />
+                                <h6 className="mb-0">Guarantee</h6>
+                              </div>
+                            </div>
+
+                            <p className="slider-text">
+                              From vibrant flowering plants to lush tropical
+                              greens, we offer an incredible variety to turn
+                              your space into a living paradise.
+                            </p>
+                            <a
+                              className="btn-main mb10 mb-3"
+                              href="shop-shop-all.html"
+                            >
+                              Shop Now
+                            </a>
+                          </div>
+                        </div>
+
+                        <div className="col-lg-6">
+                          <div className="relative">
+                            <div className="abs abs-middle bg-blur overlay-white-70 w-250px p-4 rounded-1">
+                              <h5>Algonema Plant with Teracota Pot</h5>
+                              <div className="de-rating-ext">
+                                <span className="d-stars">
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                  <i className="fa-solid fa-star"></i>
+                                </span>
+                              </div>
+                            </div>
+                            <img
+                              src="images/shop/slider/2.webp"
+                              className="w-100"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+
+                        <div className="spacer-single"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <!-- If we need navigation buttons --> */}
+            <div className="swiper-button-prev no-bg text-dark"></div>
+            <div className="swiper-button-next no-bg text-dark"></div>
+          </div>
+        </div>
+      </section>
 
       {/*  Welcome */}
       <section id="about">
@@ -259,85 +466,39 @@ const Home = () => {
             <div className="col-lg-6">
               <div className="subtitle wow fadeInUp mb-3">Our Story</div>
               <h2 className="text-uppercase wow fadeInUp" data-wow-delay=".2s">
-                Crafting <span className="id-color-2">Beautiful Gardens</span>{" "}
-                Since '99
+                Pure Ethiopian Teff
+                <span className="id-color-2"> Milled Modern Since '19</span>
               </h2>
               <p className="wow fadeInUp">
-                Established in 1999, our garden service has been transforming
-                outdoor spaces into thriving, beautiful landscapes for over two
-                decades. With a commitment to quality and personalized care, our
-                experienced team offers a full range of services, from design to
-                maintenance, ensuring your garden flourishes in every season.
+                Magna Teff, established in 2019, is a modern flour production
+                company dedicated to supplying high-standard teff flours to the
+                international market. Our teff is sourced directly from Gojam, a
+                renowned region in Ethiopia known for its high-quality teff
+                farming. Our state-of-the-art facilities ensure a completely
+                automated,hand-contact-free production process, guaranteeing the
+                purity and quality of our teff flour. We are committed to
+                meeting the growing global demand for this nutritious ancient
+                grain with uncompromising standards and reliable delivery.
               </p>
               <a
                 className="btn-main btn-line wow fadeInUp"
-                href="projects.html"
+                href="#products"
                 data-wow-delay=".6s"
               >
-                Our Projects
+                Our Products
               </a>
             </div>
 
             <div className="col-lg-6">
               <div className="row g-4">
-                <div className="col-sm-6">
+                <div className="col-2"></div>
+                <div className="col-10">
                   <div className="row g-4">
                     <div className="col-lg-12">
                       <img
                         src={aboutPic1}
                         className="w-100 rounded-1 wow zoomIn"
                         alt="ethiopian farmer"
-                      />
-                    </div>
-                    <div className="col-lg-12">
-                      <div className="rounded-1 relative bg-color-2 text-light p-4">
-                        <img
-                          src="images/icons/tree.png"
-                          className="abs abs-middle w-60px"
-                          alt=""
-                        />
-                        <div className="de_count ps-80 wow fadeInUp">
-                          <h2 className="mb-0 fs-32">
-                            <span
-                              className="timer"
-                              data-to="550"
-                              data-speed="3000"
-                            ></span>
-                            +
-                          </h2>
-                          <span className="op-7">Garden Designed</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <div className="row g-4">
-                    <div className="col-lg-12">
-                      <div className="rounded-1 relative bg-color-2 text-light p-4">
-                        <img
-                          src="images/icons/happy.png"
-                          className="abs abs-middle w-60px"
-                          alt=""
-                        />
-                        <div className="de_count ps-80 wow fadeInUp">
-                          <h2 className="mb-0 fs-32">
-                            <span
-                              className="timer"
-                              data-to="850"
-                              data-speed="3000"
-                            ></span>
-                            +
-                          </h2>
-                          <span className="op-7">Happy Customers</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-12">
-                      <img
-                        src={aboutPic1}
-                        className="w-100 rounded-1 wow zoomIn"
-                        alt=""
                       />
                     </div>
                   </div>
@@ -494,7 +655,7 @@ const Home = () => {
                 className="owl-custom-nav menu-"
                 data-target="#best-seller-carousel"
               >
-                {/* <div className="d-flex justify-content-end mb-3">
+                <div className="d-flex justify-content-end mb-3">
                   <div className="arrow-simple">
                     <a className="btn-prev me-2">
                       <FaAngleLeft size={20} />
@@ -503,7 +664,7 @@ const Home = () => {
                       <FaAngleRight size={20} />
                     </a>
                   </div>
-                </div> */}
+                </div>
 
                 <div
                   id="best-seller-carousel"
@@ -609,8 +770,8 @@ const Home = () => {
             </div>
 
             <div className="col-lg-6">
-              <div className="relative d-flex justify-content-center gluten-free-picture">
-                <img src={loveTeff} alt="gluten-free-picture" />
+              <div className="relative d-flex justify-content-center gluten-free-picture rounded-5">
+                <img src={healthyFamily} alt="healthy-family" />
               </div>
             </div>
           </div>
