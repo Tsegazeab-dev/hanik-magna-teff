@@ -6,20 +6,25 @@ import injeraPic1 from "../../assets/images/misc/injera.webp";
 import teffPic1 from "../../assets/images/misc/magna-teff-8.webp";
 import hanikLogo from "../../assets/images/logo/Hanik-logo.webp";
 import aboutPic1 from "../../assets/images/misc/happy-ethiopian-farmer.webp";
-import aboutPic2 from "../../assets/images/misc/magna-teff-3.webp";
 import callToAction from "../../assets/images/misc/bg.webp";
 import glutenFree from "../../assets/images/misc/gluten-free.png";
 import productPackage from "../../assets/images/misc/magna-package.png";
 import healthyFamily from "../../assets/images/misc/healthy-family.webp";
+import teffFlour from "../../assets/images/misc/magna-teff-3.webp";
+// import keyTeff from "../../assets/images/misc/magna-teff-7.webp";
+import plantIcon from "../../assets/images/logo/logo-icon.webp";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { GoIssueClosed } from "react-icons/go";
-import { MdLocationOn, MdOutlineEmail } from "react-icons/md";
+import { MdGrain, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import {
   FaAngleLeft,
   FaAngleRight,
+  FaArrowUp,
   FaFacebookF,
+  FaHeart,
   FaInstagram,
+  FaMedal,
   FaRegClock,
   FaWhatsapp,
   FaYoutube,
@@ -86,8 +91,14 @@ const Home = () => {
   };
   return (
     <>
+      <Link to="/" id="back-to-top">
+        <FaArrowUp />
+      </Link>
+
+      {/* preloader */}
+      <div id="de-loader"></div>
       {/*  Header */}
-      <header>
+      <header className="transparent">
         <div className="container">
           <div className="row d-flex align-items-center header-content">
             <div className="col-md-12">
@@ -96,8 +107,8 @@ const Home = () => {
                   {/*  Logo   */}
                   <div id="logo">
                     <Link to="/">
-                      <img className="logo-main" src={logo} alt="" />
-                      <img className="logo-mobile" src={logo} alt="" />
+                      <img className="logo-main" src={logo} alt="logo" />
+                      <img className="logo-mobile" src={logo} alt="logo" />
                     </Link>
                   </div>
                 </div>
@@ -129,12 +140,12 @@ const Home = () => {
                 </div>
                 <div className="de-flex-col">
                   <div className="menu_side_area">
-                    <Link
-                      to="#contact"
+                    <a
+                      href="#contact"
                       className="btn-main btn-line d-none d-sm-inline-block"
                     >
                       Get In Touch
-                    </Link>
+                    </a>
                     <span id="menu-btn" onClick={toggleMenu}>
                       {isMenuOpen ? (
                         <IoCloseCircleOutline />
@@ -168,70 +179,41 @@ const Home = () => {
               <div className="swiper-slide">
                 <div className="swiper-inner jarallax">
                   <img
-                    src="images/shop/slider/bg.webp"
+                    src={callToAction}
                     className="jarallax-img"
-                    alt=""
+                    alt="hero background"
                   />
                   <div className="sw-caption z-1000">
                     <div className="container">
                       <div className="row g-4 align-items-center justify-content-between">
                         <div className="spacer-double"></div>
 
-                        <div className="col-lg-5">
+                        <div className="col-md-6">
                           <div className="spacer-single"></div>
                           <div className="sw-text-wrapper">
-                            <div className="subtitle">Best Quality Plants</div>
+                            <div className="subtitle">Farm to table</div>
                             <h2 className="slider-title text-uppercase mb-4">
-                              Discover Amazing{" "}
-                              <span className="id-color-2">variety of plants</span>
+                              Premium Teff Flour{" "}
+                              <span className="id-color-2">
+                                – From Ethiopian Soil to Your Kitchen
+                              </span>
                             </h2>
                             <p className="slider-text">
-                              From vibrant flowering plants to lush tropical
-                              greens, we offer an incredible variety to turn
-                              your space into a living paradise.
+                              Experience the ancient supergrain. Our premium
+                              teff flour, directly from Ethiopian soil, offers
+                              natural goodness and a rich, gluten-free
+                              foundation for your healthy kitchen.
                             </p>
 
-                            <div className="d-flex mb-4 slider-extra xs-hide">
-                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
-                                <img
-                                  src="images/shop/svg/coupon-svgrepo-com.svg"
-                                  className="w-40 mb-1"
-                                  alt=""
-                                />
-                                <h6 className="mb-0">Special Price</h6>
-                              </div>
-
-                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
-                                <img
-                                  src="images/shop/svg/shipped-truck-svgrepo-com.svg"
-                                  className="w-40 mb-1"
-                                  alt=""
-                                />
-                                <h6 className="mb-0">Free Delivery</h6>
-                              </div>
-
-                              <div className="d-inline me-3 w-130px text-center overlay-white-6 p-3 rounded-1">
-                                <img
-                                  src="images/shop/svg/recommended-like-svgrepo-com.svg"
-                                  className="w-40 mb-1"
-                                  alt=""
-                                />
-                                <h6 className="mb-0">Guarantee</h6>
-                              </div>
-                            </div>
-
-                            <a
-                              className="btn-main mb10 mb-3"
-                              href="shop-shop-all.html"
-                            >
-                              Shop Now
+                            <a className="btn-main mb10 mb-3" href="#products">
+                              Our Products
                             </a>
                           </div>
                         </div>
 
-                        <div className="col-lg-6">
-                          <div className="relative">
-                            <div className="abs abs-middle bg-blur overlay-white-70 w-250px p-4 rounded-1">
+                        <div className="col-md-6">
+                          <div className="relative hero-front-image-wrapper d-none d-md-block">
+                            {/* <div className="abs abs-middle bg-blur overlay-white-70 w-250px p-4 rounded-1">
                               <h5>Algonema Plant with Teracota Pot</h5>
                               <div className="de-rating-ext">
                                 <span className="d-stars">
@@ -242,11 +224,11 @@ const Home = () => {
                                   <i className="fa-solid fa-star"></i>
                                 </span>
                               </div>
-                            </div>
+                            </div> */}
                             <img
-                              src="images/shop/slider/1.webp"
-                              className="w-100"
-                              alt=""
+                              src={teffFlour}
+                              className="hero-front-img w-100"
+                              alt="teff"
                             />
                           </div>
                         </div>
@@ -259,13 +241,9 @@ const Home = () => {
               </div>
 
               {/* <!-- Slides --> */}
-              <div className="swiper-slide">
+              {/* <div className="swiper-slide">
                 <div className="swiper-inner jarallax">
-                  <img
-                    src="images/shop/slider/bg.webp"
-                    className="jarallax-img"
-                    alt=""
-                  />
+                  <img src={callToAction} className="jarallax-img" alt="hero-background" />
                   <div className="sw-caption z-1000">
                     <div className="container">
                       <div className="row g-4 align-items-center justify-content-between">
@@ -277,7 +255,9 @@ const Home = () => {
                             <div className="subtitle">Best Quality Plants</div>
                             <h2 className="slider-title text-uppercase mb-4">
                               Discover Amazing{" "}
-                              <span className="id-color-2">variety of plants</span>
+                              <span className="id-color-2">
+                                variety of plants
+                              </span>
                             </h2>
 
                             <div className="d-flex mb-4 slider-extra xs-hide">
@@ -310,9 +290,10 @@ const Home = () => {
                             </div>
 
                             <p className="slider-text">
-                              From vibrant flowering plants to lush tropical
-                              greens, we offer an incredible variety to turn
-                              your space into a living paradise.
+                              Experience the ancient supergrain. Our premium
+                              teff flour, directly from Ethiopian soil, offers
+                              natural goodness and a rich, gluten-free
+                              foundation for your healthy kitchen.
                             </p>
                             <a
                               className="btn-main mb10 mb-3"
@@ -337,11 +318,7 @@ const Home = () => {
                                 </span>
                               </div>
                             </div>
-                            <img
-                              src="images/shop/slider/2.webp"
-                              className="w-100"
-                              alt=""
-                            />
+                            <img src={keyTeff} className="w-100" alt="" />
                           </div>
                         </div>
 
@@ -350,18 +327,18 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* <!-- If we need navigation buttons --> */}
-            <div className="swiper-button-prev no-bg text-dark"></div>
-            <div className="swiper-button-next no-bg text-dark"></div>
+            {/* <div className="swiper-button-prev no-bg text-dark"></div>
+            <div className="swiper-button-next no-bg text-dark"></div> */}
           </div>
         </div>
       </section>
 
       {/*  Welcome */}
-      <section id="about">
+      <section>
         <div className="container">
           <div className="row g-4 align-items-center">
             <div className="col-lg-6">
@@ -413,7 +390,7 @@ const Home = () => {
                   table, transforming every meal into a delightful experience.
                 </p>
                 <a
-                  className="btn-main btn-line wow fadeInUp"
+                  className="btn-main btn-line wow fadeInUp nav-btn-2 d-none d-lg-inline-block"
                   href="#products"
                   data-wow-delay=".6s"
                 >
@@ -460,7 +437,7 @@ const Home = () => {
       </section>
 
       {/* About us */}
-      <section>
+      <section id="about">
         <div className="container relative z-1">
           <div className="row g-4 gx-5 align-items-center">
             <div className="col-lg-6">
@@ -481,7 +458,7 @@ const Home = () => {
                 grain with uncompromising standards and reliable delivery.
               </p>
               <a
-                className="btn-main btn-line wow fadeInUp"
+                className="btn-main btn-line wow fadeInUp nav-btn-2 d-none d-lg-inline-block"
                 href="#products"
                 data-wow-delay=".6s"
               >
@@ -491,8 +468,8 @@ const Home = () => {
 
             <div className="col-lg-6">
               <div className="row g-4">
-                <div className="col-2"></div>
-                <div className="col-10">
+                <div className="col-lg-2 d-none d-lg-block"></div>
+                <div className="col-lg-10">
                   <div className="row g-4">
                     <div className="col-lg-12">
                       <img
@@ -510,7 +487,7 @@ const Home = () => {
       </section>
 
       {/* Why choose us */}
-      <section className="bg-light">
+      <section className="pt-0">
         <div className="container">
           <div className="row g-4 mb-3 align-items-center justify-content-center">
             <div className="col-lg-6 text-center">
@@ -522,12 +499,8 @@ const Home = () => {
           </div>
           <div className="row g-4">
             <div className="col-lg-4 col-md-6 wow fadeInUp">
-              <div className="relative h-100 bg-color text-light padding30 rounded-1">
-                <img
-                  src="images/logo-icon.webp"
-                  className="w-50px mb-3"
-                  alt=""
-                />
+              <div className="relative h-100 bg-color-2 text-light padding30 rounded-1">
+                <img src={plantIcon} className="w-50px mb-3" alt="plant icon" />
                 <div className="abs m-3 top-0 end-0 p-2 rounded-2 mb-3">01</div>
                 <div>
                   <h4>Expertise and Tradition</h4>
@@ -541,12 +514,8 @@ const Home = () => {
             </div>
 
             <div className="col-lg-4 col-md-6 wow fadeInUp">
-              <div className="relative h-100 bg-color text-light padding30 rounded-1">
-                <img
-                  src="images/logo-icon.webp"
-                  className="w-50px mb-3"
-                  alt=""
-                />
+              <div className="relative h-100 bg-color-2 text-light padding30 rounded-1">
+                <img src={plantIcon} className="w-50px mb-3" alt="plant icon" />
                 <div className="abs m-3 top-0 end-0 p-2 rounded-2 mb-3">02</div>
                 <div>
                   <h4>Solutions for Every Kitchen</h4>
@@ -560,12 +529,8 @@ const Home = () => {
             </div>
 
             <div className="col-lg-4 col-md-6 wow fadeInUp">
-              <div className="relative h-100 bg-color text-light padding30 rounded-1">
-                <img
-                  src="images/logo-icon.webp"
-                  className="w-50px mb-3"
-                  alt=""
-                />
+              <div className="relative h-100 bg-color-2 text-light padding30 rounded-1">
+                <img src={plantIcon} className="w-50px mb-3" alt="plant icon" />
                 <div className="abs m-3 top-0 end-0 p-2 rounded-2 mb-3">03</div>
                 <div>
                   <h4>Complete Supply Chain Excellence</h4>
@@ -580,11 +545,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-md-6 wow fadeInUp">
               <div className="relative h-100 bg-color-2 text-light padding30 rounded-1">
-                <img
-                  src="images/logo-icon.webp"
-                  className="w-50px mb-3"
-                  alt=""
-                />
+                <img src={plantIcon} className="w-50px mb-3" alt="plant icon" />
                 <div className="abs m-3 top-0 end-0 p-2 rounded-2 mb-3">04</div>
                 <div>
                   <h4>Naturally Superior Quality</h4>
@@ -599,11 +560,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-md-6 wow fadeInUp">
               <div className="relative h-100 bg-color-2 text-light padding30 rounded-1">
-                <img
-                  src="images/logo-icon.webp"
-                  className="w-50px mb-3"
-                  alt=""
-                />
+                <img src={plantIcon} className="w-50px mb-3" alt="plant icon" />
                 <div className="abs m-3 top-0 end-0 p-2 rounded-2 mb-3">05</div>
                 <div>
                   <h4>Sustainable & Ethical Farming</h4>
@@ -618,11 +575,7 @@ const Home = () => {
 
             <div className="col-lg-4 col-md-6 wow fadeInUp">
               <div className="relative h-100 bg-color-2 text-light padding30 rounded-1">
-                <img
-                  src="images/logo-icon.webp"
-                  className="w-50px mb-3"
-                  alt=""
-                />
+                <img src={plantIcon} className="w-50px mb-3" alt="plant icon" />
                 <div className="abs m-3 top-0 end-0 p-2 rounded-2 mb-3">06</div>
                 <div>
                   <h4>Customer Satisfaction Guaranteed</h4>
@@ -632,6 +585,51 @@ const Home = () => {
                     satisfaction of countless happy customers worldwide.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to action */}
+      <section className="jarallax advert-hero benefits-hero mt-0">
+        <img src={callToAction} className="jarallax-img" alt="background" />
+        <div className="container">
+          <div className="row g-4 align-items-center justify-content-between">
+            <div className="col-lg-6">
+              <div className="sw-text-wrapper">
+                <div className="subtitle">Importance of Teff</div>
+                <h2 className="mb-4 text-uppercase">
+                  Powerful Health Benefits of Teff
+                </h2>
+                <ul className="no-style benefits-of-teff-list">
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Protein & Fiber
+                    Powerhouse
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Naturally
+                    Gluten-Free Nutrition
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" />
+                    Rich in Essential Vitamins & Minerals
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Versatile for
+                    baking & Cooking
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Delicious Taste
+                    & Pleasant Texture
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="relative d-flex justify-content-center gluten-free-picture rounded-5">
+                <img src={healthyFamily} alt="healthy-family" />
               </div>
             </div>
           </div>
@@ -733,53 +731,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Call to action */}
-      <section className="jarallax advert-hero">
-        <img src={callToAction} className="jarallax-img" alt="background" />
-        <div className="container">
-          <div className="row g-4 align-items-center justify-content-between">
-            <div className="col-lg-6">
-              <div className="sw-text-wrapper">
-                <div className="subtitle">Importance of Teff</div>
-                <h2 className="mb-4 text-uppercase">
-                  Powerful Health Benefits of Teff
-                </h2>
-                <ul className="no-style benefits-of-teff-list">
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Protein & Fiber
-                    Powerhouse
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Naturally
-                    Gluten-Free Nutrition
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" />
-                    Rich in Essential Vitamins & Minerals
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Versatile for
-                    baking & Cooking
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Delicious Taste
-                    & Pleasant Texture
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="col-lg-6">
-              <div className="relative d-flex justify-content-center gluten-free-picture rounded-5">
-                <img src={healthyFamily} alt="healthy-family" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact us  */}
-      <section className="contact-us" id="contact">
+      <section className="contact-us pt-0" id="contact">
         <div className="container">
           <div className="row g-4 mb-3 align-items-center justify-content-center">
             <div className="col-lg-6 text-center">
@@ -789,135 +742,129 @@ const Home = () => {
               </h2>
             </div>
           </div>
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
+          <div className="row g-4">
+            <div className="col-lg-7">
               <h3 className="wow fadeInUp">Let's connect!</h3>
 
               <p>
                 Have questions about our premium teff flour? Exploring wholesale
-                opportunities? We’d love to hear from you! Fill out the form and
-                our dedicated team will get back to you promptly. At Magna Teff,
-                we’re proud to deliver Ethiopia’s finest teff—nourishing,
-                gluten-free, and packed with natural goodness. Let’s grow
-                together—reach out today!
+                opportunities? We’d love to hear from you! At Magna Teff, we’re
+                proud to deliver Ethiopia’s finest teff—nourishing, gluten-free,
+                and packed with natural goodness. Reach out today!
               </p>
 
               <div className="spacer-single"></div>
-
-              <div className="rounded-1 bg-light overflow-hidden">
+            </div>
+            <div className="row gap-4">
+              <div className="rounded-1 bg-light overflow-hidden col-lg-7">
                 <div className="row g-2">
                   <div className="col-sm-6">
                     <div
-                      className="auto-height relative"
+                      className="auto-height relative rounded-1"
                       data-bgimage="url(src/assets/images/misc/magna-teff-10.webp)"
                     ></div>
                   </div>
-                  <div className="col-sm-6 relative">
+                  <div className="col-sm-6 relative contact-info">
                     <div className="p-30">
                       <div className="fw-bold text-dark">
                         <FaRegClock className="me-2" />
                         We're Open
                       </div>
-                      Monday - Friday 08.00 - 18.00
+                      Monday - Friday 08:00 AM - 05:00 PM
                       <div className="spacer-20"></div>
                       <div className="fw-bold text-dark">
                         <MdLocationOn size={20} className="me-2" />
-                        Office Location
+                        Location
                       </div>
-                      100 S Main St, New York, NY
+                      <a
+                        href="https://maps.app.goo.gl/tsgdSDA1Re18LZpZ9"
+                        target="_blank"
+                      >
+                        Debre Markos Industial Zone, <br /> Debre Markos,
+                        Ethiopia (300 km northwest of Addis Ababa).
+                      </a>
                       <div className="spacer-20"></div>
                       <div className="fw-bold text-dark">
                         <FaPhoneAlt className="me-2" />
                         Call Us Directly
                       </div>
-                      +1 123 456 789
+                      <div>
+                        <a href="tel:+251911532949">+251911532949</a>
+                      </div>
+                      <div>+251911264129</div>
+                      <div>+251962606060</div>
                       <div className="spacer-20"></div>
                       <div className="fw-bold text-dark">
                         <MdOutlineEmail size={20} className="me-2" />
                         Send a Message
                       </div>
-                      contact@gardyn.com
+                      <a href="mailto:magnateff2025@gmail.com">
+                        magnateff2025@gmail.com
+                      </a>
+                      <div className="social-icons mt-3">
+                        <Link to="#">
+                          <FaFacebookF />
+                        </Link>
+                        <Link to="#">
+                          <FaInstagram />
+                        </Link>
+                        <Link to="#">
+                          <FaYoutube />
+                        </Link>
+                        <a href="tel:+251911532949">
+                          <FaWhatsapp />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="d-none d-lg-block rounded-1 col-lg conatact-why-choose-us">
+                <div className="p-4">
+                  <div class="">
+                    <h3>Why Choose Our Teff Flour?</h3>
+                    <ul class="list-unstyled">
+                      <li>
+                        <MdGrain color="#5c4141" className="me-1" size={20} />{" "}
+                        <strong>Finely Ground</strong> – Our premium milling
+                        process ensures a velvety texture, perfect for
+                        nutritious injera and wholesome baking.
+                      </li>
+                      <li>
+                        <FaMedal color="#E67c30" className="me-1" size={20} />{" "}
+                        <strong>Quality You Can Trust</strong> – Sourced from
+                        the best farms, our teff flour guarantees exceptional
+                        flavor and health benefits in every bite.
+                      </li>
+                      <li>
+                        <FaHeart color="#09b209" className="me-1" size={20} />{" "}
+                        <strong>Gluten-Free</strong> – Packed with essential
+                        nutrients, it’s the perfect choice for gluten-sensitive
+                        diets, promoting overall health and wellness.
+                      </li>
+                    </ul>
+                    <div className="mt-4 d-flex justify-content-end">
+                      <a
+                        className="btn-main mb10 mb-3"
+                        href="tel:+251911532949"
+                      >
+                        Contact Us Now
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="col-lg-6">
-              <div className="p-4 rounded-10px">
-                <form
-                  name="contactForm"
-                  id="contact_form"
-                  className="position-relative z1000"
-                  method="post"
-                  action="contact.php"
-                >
-                  <div className="field-set">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      className="form-control"
-                      placeholder="Your Name"
-                      required
-                    />
-                  </div>
-
-                  <div className="field-set">
-                    <input
-                      type="text"
-                      name="email"
-                      id="email"
-                      className="form-control"
-                      placeholder="Your Email"
-                      required
-                    />
-                  </div>
-
-                  <div className="field-set">
-                    <input
-                      type="text"
-                      name="phone"
-                      id="phone"
-                      className="form-control"
-                      placeholder="Your Phone"
-                      required
-                    />
-                  </div>
-
-                  <div className="field-set mb20">
-                    <textarea
-                      name="message"
-                      id="message"
-                      className="form-control"
-                      placeholder="Your Message"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <div
-                    className="g-recaptcha"
-                    data-sitekey="6LdW03QgAAAAAJko8aINFd1eJUdHlpvT4vNKakj6"
-                  ></div>
-                  <div id="submit" className="mt20">
-                    <input
-                      type="submit"
-                      id="send_message"
-                      value="Send Message"
-                      className="btn-main"
-                    />
-                  </div>
-
-                  <div id="success_message" className="success">
-                    Your message has been sent successfully. Refresh this page
-                    if you want to send more messages.
-                  </div>
-                  <div id="error_message" className="error">
-                    Sorry there was an error sending your form.
-                  </div>
-                </form>
-              </div>
-            </div>
+          </div>
+          <div className="map-container mt-5">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3925.527576221012!2d37.72882307624084!3d10.299596267805454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDE3JzU4LjUiTiAzN8KwNDMnNTMuMCJF!5e0!3m2!1sen!2set!4v1753752468656!5m2!1sen!2set"
+              width="100%"
+              height="100%"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -940,16 +887,16 @@ const Home = () => {
               </p>
 
               <div className="social-icons mb-sm-30">
-                <a href="#" target="_blank">
+                <Link to="#">
                   <FaFacebookF />
-                </a>
-                <a href="#" target="_blank">
+                </Link>
+                <Link to="#">
                   <FaInstagram />
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                   <FaYoutube />
-                </a>
-                <a href="#" target="_blank">
+                </Link>
+                <a href="tel:+251911532949">
                   <FaWhatsapp />
                 </a>
               </div>
@@ -961,19 +908,26 @@ const Home = () => {
                   <FaRegClock className="me-2" />
                   We're Open
                 </div>
-                Monday - Friday 08.00 - 18.00
+                Monday - Friday 08:00 AM - 05:00 PM
                 <div className="spacer-10"></div>
                 <div>
                   <MdLocationOn size={20} className="me-2" />
-                  Office Location
+                  Location
                 </div>
-                100 S Main St, New York, NY
+                <a
+                  href="https://maps.app.goo.gl/tsgdSDA1Re18LZpZ9"
+                  target="_blank"
+                >
+                  Debre Markos Industial Zone, Debre Markos, Ethiopia
+                </a>
                 <div className="spacer-10"></div>
                 <div>
                   <MdOutlineEmail size={20} className="me-2" />
                   Send a Message
                 </div>
-                contact@gardyn.com
+                <a href="mailto:magnateff2025@gmail.com">
+                  magnateff2025@gmail.com
+                </a>
               </div>
             </div>
           </div>
@@ -1013,7 +967,7 @@ const Home = () => {
         </div>
 
         <div id="extra-content">
-          <img src={whiteLogo} className="w-150px" alt="" />
+          <img src={whiteLogo} className="w-150px" alt="white-logo" />
 
           <div className="spacer-30-line"></div>
 
@@ -1058,30 +1012,32 @@ const Home = () => {
           <div className="spacer-30-line"></div>
 
           <h5>Contact Us</h5>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center overlay-icons">
             <FaRegClock className="me-2" />
-            Monday - Friday 08.00 - 18.00
+            Monday - Friday 08:00 AM - 05.00 PM
           </div>
           <div className="d-flex align-items-center">
-            <MdLocationOn className="me-2" />
-            100 S Main St, New York,
+            <MdLocationOn size={20} className="me-2" />
+            <a href="https://maps.app.goo.gl/tsgdSDA1Re18LZpZ9" target="_blank">
+              Debre Markos Industial Zone, <br /> Debre Markos, Ethiopia
+            </a>
           </div>
           <div className="d-flex align-items-center">
             <MdOutlineEmail className="me-2" />
-            contact@magnateff.com
+            magnateff2025@gmail.com
           </div>
 
           <div className="social-icons mt-2">
-            <a href="#" target="_blank">
+            <Link to="#">
               <FaFacebookF />
-            </a>
-            <a href="#" target="_blank">
+            </Link>
+            <Link to="#">
               <FaInstagram />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <FaYoutube />
-            </a>
-            <a href="#" target="_blank">
+            </Link>
+            <a href="tel:+251911532949">
               <FaWhatsapp />
             </a>
           </div>
