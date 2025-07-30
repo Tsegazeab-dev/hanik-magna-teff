@@ -821,9 +821,9 @@ const Home = () => {
               </div>
               <div className="d-none d-lg-block rounded-1 col-lg conatact-why-choose-us">
                 <div className="p-4">
-                  <div class="">
+                  <div className="">
                     <h3>Why Choose Our Teff Flour?</h3>
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                       <li>
                         <MdGrain color="#5c4141" className="me-1" size={20} />{" "}
                         <strong>Finely Ground</strong> – Our premium milling

@@ -51,7 +51,7 @@ Table of content:
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* ================================================== */
 
@@ -256,8 +256,8 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
-header .header-content{
- min-height: 80px;
+header .header-content {
+  min-height: 80px;
 }
 
 header.header-s1 {
@@ -402,7 +402,7 @@ header.smaller #mainmenu ul ul {
 header.smaller {
   position: fixed;
   top: 0px;
-    background: #f6e0c6;
+  background: #f6e0c6;
   /* border: none; */
 }
 
@@ -923,7 +923,7 @@ header.smaller #mainmenu > li::before {
   text-transform: var(--mainmenu-text-transform);
   color: #111111;
 }
-#mainmenu > li > a:hover{
+#mainmenu > li > a:hover {
   color: var(--primary-color);
 }
 #mainmenu.s2 li > a {
@@ -1299,13 +1299,13 @@ header:not(.header-mobile) #mainmenu > li:hover ul.mega {
   padding: 4px;
   text-align: center;
   cursor: poInter;
-  color: #000;
+  color: #000 !important;
   margin-top: 0px;
   margin-left: 20px;
 }
 
 #menu-btn:before {
-  font-family: FontAwesome;
+  font-family: "FontAwesome";
   content: "\f0c9";
   font-size: 20px;
 }
@@ -1334,7 +1334,6 @@ header:not(.header-mobile) #mainmenu > li:hover ul.mega {
   width: 100%;
   border-bottom: solid 2px #000000;
 }
-
 
 #btn-extra.dark span {
   border-bottom: solid 2px var(--bg-dark-1);
@@ -1916,7 +1915,7 @@ footer {
   /* color: #404A60; */
   color: #ffffff;
   /* background: var(--secondary-color); */
-  background-color: #2D3436;
+  background-color: #2d3436;
   padding: 30px 0 0 0;
 }
 
@@ -1971,8 +1970,8 @@ footer a {
 .de-navbar-left .subfooter {
   background: none;
 }
-footer .footer-copyright{
-  color: #636E72;
+footer .footer-copyright {
+  color: #636e72;
 }
 
 header.side-header {
@@ -22548,9 +22547,9 @@ img {
   }
 
   #topbar,
-  #btn-extra {
+  /* #btn-extra {
     display: none;
-  }
+  } */
 
   #content {
     margin-top: 58px !important;
@@ -23024,9 +23023,9 @@ img {
 .advert-hero {
   padding-block: 50px;
 }
-.contact-us{
+.contact-us {
   padding-top: 0;
 }
-.swiper-slide{
-background-position: center;
+.swiper-slide {
+  background-position: center;
 }

@@ -1,5 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+
+import "./utils/plugins.js";
+import "./utils/designesia.js";
 // Import styles
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/plugins.css";
