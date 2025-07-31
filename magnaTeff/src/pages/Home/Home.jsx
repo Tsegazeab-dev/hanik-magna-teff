@@ -794,7 +794,7 @@ const Home = () => {
                 <div className="col-sm-6">
                   <div
                     className="auto-height relative rounded-1"
-                    data-bgimage="url(src/assets/images/misc/magna-teff-10.webp)"
+                    data-bgimage="url(images/magna-teff-10.webp)"
                   ></div>
                 </div>
                 <div className="col-sm-6 relative contact-info">

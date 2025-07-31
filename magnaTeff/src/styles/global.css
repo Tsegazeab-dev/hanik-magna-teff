@@ -14278,7 +14278,7 @@ i.bg-color-secondary {
 .atr__images img {
   width: 100%;
   height: auto;
-  background: var(--bg-light);
+  /* background: var(--bg-light); */
   padding: 20px;
   border-radius: 16px;
 }
