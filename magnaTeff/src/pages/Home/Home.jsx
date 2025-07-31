@@ -113,7 +113,7 @@ const Home = () => {
       </Link>
 
       {/* preloader */}
-      <div id="de-loader"></div>
+      {/* <div id="de-loader"></div> */}
       {/*  Header */}
       <header className="transparent">
         <div className="container">
@@ -831,8 +831,8 @@ const Home = () => {
                       <MdOutlineEmail size={20} className="me-2" />
                       Send a Message
                     </div>
-                    <a href="mailto:magnateff2025@gmail.com">
-                      magnateff2025@gmail.com
+                    <a href="mailto:contact@magna-teff.com">
+                      contact@magna-teff.com
                     </a>
                     <div className="social-icons mt-3">
                       <Link to="#">
@@ -957,8 +957,8 @@ const Home = () => {
                   <MdOutlineEmail size={20} className="me-2" />
                   Send a Message
                 </div>
-                <a href="mailto:magnateff2025@gmail.com">
-                  magnateff2025@gmail.com
+                <a href="mailto:contact@magna-teff.com">
+                  contact@magna-teff.com
                 </a>
               </div>
             </div>
@@ -1056,7 +1056,7 @@ const Home = () => {
           </div>
           <div className="d-flex align-items-center">
             <MdOutlineEmail className="me-2" />
-            magnateff2025@gmail.com
+            <a href="mailto:contact@magna-teff.com">contact@magna-teff.com</a>
           </div>
 
           <div className="social-icons mt-2">
