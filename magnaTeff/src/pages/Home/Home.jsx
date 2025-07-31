@@ -7,11 +7,12 @@ import teffPic1 from "../../assets/images/misc/magna-teff-8.webp";
 import hanikLogo from "../../assets/images/logo/Hanik-logo.webp";
 import aboutPic1 from "../../assets/images/misc/happy-ethiopian-farmer.webp";
 import callToAction from "../../assets/images/misc/bg.webp";
-import glutenFree from "../../assets/images/misc/gluten-free.png";
-import productPackage from "../../assets/images/misc/magna-package.png";
-import healthyFamily from "../../assets/images/misc/healthy-family.webp";
+import glutenFree from "../../assets/images/misc/gluten-free.webp";
+import whiteTeffPackage from "../../assets/images/misc/white-teff-package.webp";
+import brownTeffPackage from "../../assets/images/misc/brown-teff-pack.webp";
+import sergegnaTeffPackage from "../../assets/images/misc/sergegna-teff-package.webp";
+import ethiopianTeff from "../../assets/images/misc/ethiopian-teff.webp";
 import teffFlour from "../../assets/images/misc/magna-teff-3.webp";
-// import keyTeff from "../../assets/images/misc/magna-teff-7.webp";
 import plantIcon from "../../assets/images/logo/logo-icon.webp";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseCircleOutline } from "react-icons/io5";
@@ -80,6 +81,14 @@ const Home = () => {
       headerRef.current.style.height = "auto";
       document.body.style.overflow = ""; // Ensure body overflow is reset
     }
+    const handleScroll = () => {
+      if (isMenuOpen && isMobileView) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isMenuOpen, isMobileView]);
 
   //  Menu open/close toggle
@@ -88,6 +97,14 @@ const Home = () => {
     if (isMobileView) {
       setIsMenuOpen((prev) => !prev);
     }
+  };
+
+  // Scroll to top
+  const handleHomeClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // for smooth scrolling
+    });
   };
   return (
     <>
@@ -106,7 +123,7 @@ const Home = () => {
                 <div className="de-flex-col">
                   {/*  Logo   */}
                   <div id="logo">
-                    <Link to="/">
+                    <Link to="/" onClick={handleHomeClick}>
                       <img className="logo-main" src={logo} alt="logo" />
                       <img className="logo-mobile" src={logo} alt="logo" />
                     </Link>
@@ -116,7 +133,11 @@ const Home = () => {
                   {/* main menu  */}
                   <ul id="mainmenu">
                     <li>
-                      <Link className="menu-item" to="/">
+                      <Link
+                        className="menu-item"
+                        to="/"
+                        onClick={handleHomeClick}
+                      >
                         Home
                       </Link>
                     </li>
@@ -337,111 +358,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/*  Welcome */}
-      <section>
-        <div className="container">
-          <div className="row g-4 align-items-center">
-            <div className="col-lg-6">
-              <div className="relative">
-                <div className="rounded-1 bg-body w-90 overflow-hidden wow zoomIn welcome-images">
-                  <img
-                    src={teffPic1}
-                    className="w-100 wow scaleIn"
-                    alt="teff picture"
-                  />
-                </div>
-                <div
-                  className="rounded-1 bg-body w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn welcome-images"
-                  data-wow-delay=".2s"
-                >
-                  <img
-                    src={injeraPic1}
-                    className="w-100 wow scaleIn"
-                    data-wow-delay=".2s"
-                    alt="injera"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="ps-lg-3 mt-5 mt-md-0">
-                <div
-                  className="subtitle id-color wow fadeInUp"
-                  data-wow-delay=".2s"
-                >
-                  Welcome to Magna Teff
-                </div>
-                <h2
-                  className="text-uppercase wow fadeInUp"
-                  data-wow-delay=".4s"
-                >
-                  Taste{" "}
-                  <span className="id-color-2">the Original Supergrain</span>
-                </h2>
-                <p className="wow fadeInUp" data-wow-delay=".6s">
-                  Discover the essence of Ethiopian cuisine with our authentic,
-                  gluten-free teff flour. Packed with nutrients and flavor, it’s
-                  perfect for a variety of culinary delights—whether you’re
-                  baking traditional injera, crafting gluten-free treats, or
-                  experimenting with ancient superfoods. We take pride in
-                  delivering the highest quality teff, trusted by chefs, health
-                  enthusiasts, and home cooks around the globe. Let us bring the
-                  rich heritage and wholesome goodness of Ethiopian teff to your
-                  table, transforming every meal into a delightful experience.
-                </p>
-                <a
-                  className="btn-main btn-line wow fadeInUp nav-btn-2 d-none d-lg-inline-block"
-                  href="#products"
-                  data-wow-delay=".6s"
-                >
-                  Our products
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to action */}
-      <section className="jarallax advert-hero">
-        <img src={callToAction} className="jarallax-img" alt="background" />
-        <div className="container">
-          <div className="row g-4 align-items-center justify-content-between">
-            <div className="col-lg-6">
-              <div className="sw-text-wrapper">
-                <div className="subtitle">Teff</div>
-                <h2 className="mb-2 text-uppercase">
-                  Discover Teff
-                  <span className="id-color-2">
-                    {" "}
-                    Ethiopia's Ancient Supergrain
-                  </span>
-                </h2>
-                <p>
-                  Fuel your body with Teff, an ancient Ethiopian grain (6,000+
-                  years of history!) that powers elite runners. This naturally
-                  gluten-free powerhouse is packed with slow-release carbs,
-                  complete protein, iron, and fiber for sustained energy and gut
-                  health. Unlock the benefits of this supergrain—try Teff today!
-                </p>
-              </div>
-            </div>
-
-            <div className="col-lg-6">
-              <div className="relative d-flex justify-content-center gluten-free-picture">
-                <img src={glutenFree} alt="gluten-free-picture" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About us */}
       <section id="about">
         <div className="container relative z-1">
           <div className="row g-4 gx-5 align-items-center">
             <div className="col-lg-6">
-              <div className="subtitle wow fadeInUp mb-3">Our Story</div>
+              <div className="subtitle wow fadeInUp mb-3">
+                Welcome to Magna Teff
+              </div>
               <h2 className="text-uppercase wow fadeInUp" data-wow-delay=".2s">
                 Pure Ethiopian Teff
                 <span className="id-color-2"> Milled Modern Since '19</span>
@@ -486,8 +410,256 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Call to action */}
+      <section className="jarallax advert-hero">
+        <img src={callToAction} className="jarallax-img" alt="background" />
+        <div className="container">
+          <div className="row g-4 align-items-center justify-content-between">
+            <div className="col-lg-6">
+              <div className="sw-text-wrapper">
+                <div className="subtitle">Teff</div>
+                <h2 className="mb-2 text-uppercase">
+                  Discover Teff
+                  <span className="id-color-2">
+                    {" "}
+                    Ethiopia's Ancient Supergrain
+                  </span>
+                </h2>
+                <p>
+                  Fuel your body with Teff, an ancient Ethiopian grain (6,000+
+                  years of history!) that powers elite runners. This naturally
+                  gluten-free powerhouse is packed with slow-release carbs,
+                  complete protein, iron, and fiber for sustained energy and gut
+                  health. Unlock the benefits of this supergrain—try Teff today!
+                </p>
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="relative d-flex justify-content-center gluten-free-picture">
+                <img src={glutenFree} alt="gluten-free-picture" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/*  Welcome */}
+      <section className="pb-0">
+        <div className="container">
+          <div className="row g-4 align-items-center">
+            <div className="col-lg-6">
+              <div className="relative">
+                <div className="rounded-1 bg-body w-90 overflow-hidden wow zoomIn welcome-images">
+                  <img
+                    src={teffPic1}
+                    className="w-100 wow scaleIn"
+                    alt="teff picture"
+                  />
+                </div>
+                <div
+                  className="rounded-1 bg-body w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden shadow-soft wow zoomIn welcome-images"
+                  data-wow-delay=".2s"
+                >
+                  <img
+                    src={injeraPic1}
+                    className="w-100 wow scaleIn"
+                    data-wow-delay=".2s"
+                    alt="injera"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="ps-lg-3 mt-5 mt-md-0">
+                <div
+                  className="subtitle id-color wow fadeInUp"
+                  data-wow-delay=".2s"
+                >
+                  Magna Teff
+                </div>
+                <h2
+                  className="text-uppercase wow fadeInUp"
+                  data-wow-delay=".4s"
+                >
+                  Taste{" "}
+                  <span className="id-color-2">the Original Supergrain</span>
+                </h2>
+                <p className="wow fadeInUp" data-wow-delay=".6s">
+                  Discover the essence of Ethiopian cuisine with our authentic,
+                  gluten-free teff flour. Packed with nutrients and flavor, it’s
+                  perfect for a variety of culinary delights—whether you’re
+                  baking traditional injera, crafting gluten-free treats, or
+                  experimenting with ancient superfoods. We take pride in
+                  delivering the highest quality teff, trusted by chefs, health
+                  enthusiasts, and home cooks around the globe. Let us bring the
+                  rich heritage and wholesome goodness of Ethiopian teff to your
+                  table, transforming every meal into a delightful experience.
+                </p>
+                {/* <a
+                  className="btn-main btn-line wow fadeInUp nav-btn-2 d-none d-lg-inline-block"
+                  href="#products"
+                  data-wow-delay=".6s"
+                >
+                  Our products
+                </a> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products  */}
+      <section id="products" className="mt-lg-5">
+        <div className="container">
+          <div className="row g-4 mb-3 align-items-center justify-content-center">
+            <div className="col-lg-7 text-center">
+              <div className="subtitle wow fadeInUp">Our Products</div>
+              <h2 className="text-uppercase wow fadeInUp" data-wow-delay=".2s">
+                Our Export Standard <span className="id-color-2">Products</span>
+              </h2>
+            </div>
+          </div>
+          <div className="row g-4 mb-4">
+            <div className="col-lg-12">
+              <div
+                className="owl-custom-nav menu-"
+                data-target="#best-seller-carousel"
+              >
+                <div className="d-flex justify-content-end mb-3">
+                  <div className="arrow-simple">
+                    <a className="btn-prev me-2">
+                      <FaAngleLeft size={20} />
+                    </a>
+                    <a className="btn-next ms-2">
+                      <FaAngleRight size={20} />
+                    </a>
+                  </div>
+                </div>
+
+                <div
+                  id="best-seller-carousel"
+                  className="owl-carousel owl-3-cols"
+                >
+                  {/* product item */}
+                  <div className="item">
+                    <div className="de__pcard text-center">
+                      <div className="atr__images">
+                        <img
+                          className="atr__image-main"
+                          src={whiteTeffPackage}
+                        />
+                        <img
+                          className="atr__image-hover"
+                          src={whiteTeffPackage}
+                        />
+                      </div>
+
+                      <div className="de-rating-ext">
+                        <h3>White Teff</h3>
+                      </div>
+
+                      <h3>(ነጭ ጤፍ)</h3>
+                    </div>
+                  </div>
+
+                  {/* product item  */}
+                  <div className="item">
+                    <div className="de__pcard text-center">
+                      <div className="atr__images">
+                        <img
+                          className="atr__image-main"
+                          src={sergegnaTeffPackage}
+                        />
+                        <img
+                          className="atr__image-hover"
+                          src={sergegnaTeffPackage}
+                        />
+                      </div>
+
+                      <div className="de-rating-ext">
+                        <h3>Sergegna Teff</h3>
+                      </div>
+
+                      <h3>(ሰርገኛ ጤፍ)</h3>
+                    </div>
+                  </div>
+
+                  {/* product item */}
+                  <div className="item">
+                    <div className="de__pcard text-center">
+                      <div className="atr__images">
+                        <img
+                          className="atr__image-main"
+                          src={brownTeffPackage}
+                        />
+                        <img
+                          className="atr__image-hover"
+                          src={brownTeffPackage}
+                        />
+                      </div>
+
+                      <div className="de-rating-ext">
+                        <h3>Brown Teff</h3>
+                      </div>
+
+                      <h3>(ቀይ ጤፍ)</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to action */}
+      <section className="jarallax advert-hero benefits-hero">
+        <img src={callToAction} className="jarallax-img" alt="background" />
+        <div className="container">
+          <div className="row g-4 align-items-center justify-content-between">
+            <div className="col-lg-6">
+              <div className="sw-text-wrapper">
+                <div className="subtitle">Importance of Teff</div>
+                <h2 className="mb-4 text-uppercase">
+                  Powerful Health Benefits of Teff
+                </h2>
+                <ul className="no-style benefits-of-teff-list">
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Protein & Fiber
+                    Powerhouse
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Naturally
+                    Gluten-Free Nutrition
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" />
+                    Rich in Essential Vitamins & Minerals
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Versatile for
+                    baking & Cooking
+                  </li>
+                  <li>
+                    <FaCheckCircle size={20} color="#d4a373" /> Delicious Taste
+                    & Pleasant Texture
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-lg-6">
+              <div className="relative d-flex justify-content-center gluten-free-picture rounded-5">
+                <img src={ethiopianTeff} alt="healthy-family" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why choose us */}
-      <section className="pt-0">
+      <section>
         <div className="container">
           <div className="row g-4 mb-3 align-items-center justify-content-center">
             <div className="col-lg-6 text-center">
@@ -591,146 +763,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Call to action */}
-      <section className="jarallax advert-hero benefits-hero mt-0">
-        <img src={callToAction} className="jarallax-img" alt="background" />
-        <div className="container">
-          <div className="row g-4 align-items-center justify-content-between">
-            <div className="col-lg-6">
-              <div className="sw-text-wrapper">
-                <div className="subtitle">Importance of Teff</div>
-                <h2 className="mb-4 text-uppercase">
-                  Powerful Health Benefits of Teff
-                </h2>
-                <ul className="no-style benefits-of-teff-list">
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Protein & Fiber
-                    Powerhouse
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Naturally
-                    Gluten-Free Nutrition
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" />
-                    Rich in Essential Vitamins & Minerals
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Versatile for
-                    baking & Cooking
-                  </li>
-                  <li>
-                    <FaCheckCircle size={20} color="#d4a373" /> Delicious Taste
-                    & Pleasant Texture
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="col-lg-6">
-              <div className="relative d-flex justify-content-center gluten-free-picture rounded-5">
-                <img src={healthyFamily} alt="healthy-family" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Products  */}
-      <section id="products">
-        <div className="container">
-          <div className="row g-4 mb-3 align-items-center justify-content-center">
-            <div className="col-lg-7 text-center">
-              <div className="subtitle wow fadeInUp">Our Products</div>
-              <h2 className="text-uppercase wow fadeInUp" data-wow-delay=".2s">
-                Our Export Standard <span className="id-color-2">Products</span>
-              </h2>
-            </div>
-          </div>
-          <div className="row g-4 mb-4">
-            <div className="col-lg-12">
-              <div
-                className="owl-custom-nav menu-"
-                data-target="#best-seller-carousel"
-              >
-                <div className="d-flex justify-content-end mb-3">
-                  <div className="arrow-simple">
-                    <a className="btn-prev me-2">
-                      <FaAngleLeft size={20} />
-                    </a>
-                    <a className="btn-next ms-2">
-                      <FaAngleRight size={20} />
-                    </a>
-                  </div>
-                </div>
-
-                <div
-                  id="best-seller-carousel"
-                  className="owl-carousel owl-3-cols"
-                >
-                  {/* product item */}
-                  <div className="item">
-                    <div className="de__pcard text-center">
-                      <div className="atr__images">
-                        <img className="atr__image-main" src={productPackage} />
-                        <img
-                          className="atr__image-hover"
-                          src={productPackage}
-                        />
-                      </div>
-
-                      <div className="de-rating-ext">
-                        <h3>Nech Teff</h3>
-                      </div>
-
-                      <h3>(ነጭ ጤፍ)</h3>
-                    </div>
-                  </div>
-
-                  {/* product item  */}
-                  <div className="item">
-                    <div className="de__pcard text-center">
-                      <div className="atr__images">
-                        <img className="atr__image-main" src={productPackage} />
-                        <img
-                          className="atr__image-hover"
-                          src={productPackage}
-                        />
-                      </div>
-
-                      <div className="de-rating-ext">
-                        <h3>Sergegna Teff</h3>
-                      </div>
-
-                      <h3>(ሰርገኛ ጤፍ)</h3>
-                    </div>
-                  </div>
-
-                  {/* product item */}
-                  <div className="item">
-                    <div className="de__pcard text-center">
-                      <div className="atr__images">
-                        <img className="atr__image-main" src={productPackage} />
-                        <img
-                          className="atr__image-hover"
-                          src={productPackage}
-                        />
-                      </div>
-
-                      <div className="de-rating-ext">
-                        <h3>Key Teff</h3>
-                      </div>
-
-                      <h3>(ቀይ ጤፍ)</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact us  */}
       <section className="contact-us pt-0" id="contact">
         <div className="container">
@@ -742,7 +774,7 @@ const Home = () => {
               </h2>
             </div>
           </div>
-          <div className="row g-4">
+          <div className="row">
             <div className="col-lg-7">
               <h3 className="wow fadeInUp">Let's connect!</h3>
 
@@ -755,102 +787,99 @@ const Home = () => {
 
               <div className="spacer-single"></div>
             </div>
-            <div className="row gap-4">
-              <div className="rounded-1 bg-light overflow-hidden col-lg-7">
-                <div className="row g-2">
-                  <div className="col-sm-6">
-                    <div
-                      className="auto-height relative rounded-1"
-                      data-bgimage="url(src/assets/images/misc/magna-teff-10.webp)"
-                    ></div>
-                  </div>
-                  <div className="col-sm-6 relative contact-info">
-                    <div className="p-30">
-                      <div className="fw-bold text-dark">
-                        <FaRegClock className="me-2" />
-                        We're Open
-                      </div>
-                      Monday - Friday 08:00 AM - 05:00 PM
-                      <div className="spacer-20"></div>
-                      <div className="fw-bold text-dark">
-                        <MdLocationOn size={20} className="me-2" />
-                        Location
-                      </div>
-                      <a
-                        href="https://maps.app.goo.gl/tsgdSDA1Re18LZpZ9"
-                        target="_blank"
-                      >
-                        Debre Markos Industial Zone, <br /> Debre Markos,
-                        Ethiopia (300 km northwest of Addis Ababa).
+          </div>
+          <div className="row gap-4">
+            <div className="rounded-1 bg-light overflow-hidden col-lg-7 ps-0">
+              <div className="row g-2">
+                <div className="col-sm-6">
+                  <div
+                    className="auto-height relative rounded-1"
+                    data-bgimage="url(src/assets/images/misc/magna-teff-10.webp)"
+                  ></div>
+                </div>
+                <div className="col-sm-6 relative contact-info">
+                  <div className="p-30">
+                    <div className="fw-bold text-dark">
+                      <FaRegClock className="me-2" />
+                      We're Open
+                    </div>
+                    Monday - Friday 08:00 AM - 05:00 PM
+                    <div className="spacer-20"></div>
+                    <div className="fw-bold text-dark">
+                      <MdLocationOn size={20} className="me-2" />
+                      Location
+                    </div>
+                    <a
+                      href="https://maps.app.goo.gl/tsgdSDA1Re18LZpZ9"
+                      target="_blank"
+                    >
+                      Debre Markos Industial Zone, <br /> Debre Markos, Ethiopia
+                      (300 km northwest of Addis Ababa).
+                    </a>
+                    <div className="spacer-20"></div>
+                    <div className="fw-bold text-dark">
+                      <FaPhoneAlt className="me-2" />
+                      Call Us Directly
+                    </div>
+                    <div>
+                      <a href="tel:+251911532949">+251911532949</a>
+                    </div>
+                    <div>+251911264129</div>
+                    <div>+251962606060</div>
+                    <div className="spacer-20"></div>
+                    <div className="fw-bold text-dark">
+                      <MdOutlineEmail size={20} className="me-2" />
+                      Send a Message
+                    </div>
+                    <a href="mailto:magnateff2025@gmail.com">
+                      magnateff2025@gmail.com
+                    </a>
+                    <div className="social-icons mt-3">
+                      <Link to="#">
+                        <FaFacebookF />
+                      </Link>
+                      <Link to="#">
+                        <FaInstagram />
+                      </Link>
+                      <Link to="#">
+                        <FaYoutube />
+                      </Link>
+                      <a href="tel:+251911532949">
+                        <FaWhatsapp />
                       </a>
-                      <div className="spacer-20"></div>
-                      <div className="fw-bold text-dark">
-                        <FaPhoneAlt className="me-2" />
-                        Call Us Directly
-                      </div>
-                      <div>
-                        <a href="tel:+251911532949">+251911532949</a>
-                      </div>
-                      <div>+251911264129</div>
-                      <div>+251962606060</div>
-                      <div className="spacer-20"></div>
-                      <div className="fw-bold text-dark">
-                        <MdOutlineEmail size={20} className="me-2" />
-                        Send a Message
-                      </div>
-                      <a href="mailto:magnateff2025@gmail.com">
-                        magnateff2025@gmail.com
-                      </a>
-                      <div className="social-icons mt-3">
-                        <Link to="#">
-                          <FaFacebookF />
-                        </Link>
-                        <Link to="#">
-                          <FaInstagram />
-                        </Link>
-                        <Link to="#">
-                          <FaYoutube />
-                        </Link>
-                        <a href="tel:+251911532949">
-                          <FaWhatsapp />
-                        </a>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="d-none d-lg-block rounded-1 col-lg conatact-why-choose-us">
-                <div className="p-4">
-                  <div className="">
-                    <h3>Why Choose Our Teff Flour?</h3>
-                    <ul className="list-unstyled">
-                      <li>
-                        <MdGrain color="#5c4141" className="me-1" size={20} />{" "}
-                        <strong>Finely Ground</strong> – Our premium milling
-                        process ensures a velvety texture, perfect for
-                        nutritious injera and wholesome baking.
-                      </li>
-                      <li>
-                        <FaMedal color="#E67c30" className="me-1" size={20} />{" "}
-                        <strong>Quality You Can Trust</strong> – Sourced from
-                        the best farms, our teff flour guarantees exceptional
-                        flavor and health benefits in every bite.
-                      </li>
-                      <li>
-                        <FaHeart color="#09b209" className="me-1" size={20} />{" "}
-                        <strong>Gluten-Free</strong> – Packed with essential
-                        nutrients, it’s the perfect choice for gluten-sensitive
-                        diets, promoting overall health and wellness.
-                      </li>
-                    </ul>
-                    <div className="mt-4 d-flex justify-content-end">
-                      <a
-                        className="btn-main mb10 mb-3"
-                        href="tel:+251911532949"
-                      >
-                        Contact Us Now
-                      </a>
-                    </div>
+            </div>
+            <div className="d-none d-lg-flex rounded-1 col-lg conatact-why-choose-us">
+              <div className="p-4">
+                <div>
+                  <h3>Why Choose Our Teff Flour?</h3>
+                  <ul className="list-unstyled">
+                    <li>
+                      <MdGrain color="#5c4141" className="me-1" size={20} />{" "}
+                      <strong>Finely Ground</strong> – Our premium milling
+                      process ensures a velvety texture, perfect for nutritious
+                      injera and wholesome baking.
+                    </li>
+                    <li>
+                      <FaMedal color="#E67c30" className="me-1" size={20} />{" "}
+                      <strong>Quality You Can Trust</strong> – Sourced from the
+                      best farms, our teff flour guarantees exceptional flavor
+                      and health benefits in every bite.
+                    </li>
+                    <li>
+                      <FaHeart color="#09b209" className="me-1" size={20} />{" "}
+                      <strong>Gluten-Free</strong> – Packed with essential
+                      nutrients, it’s the perfect choice for gluten-sensitive
+                      diets, promoting overall health and wellness.
+                    </li>
+                  </ul>
+                  <div className="mt-4 d-flex justify-content-end">
+                    <a className="btn-main mb10 mb-3" href="tel:+251911532949">
+                      Contact Us Now
+                    </a>
                   </div>
                 </div>
               </div>
@@ -874,7 +903,10 @@ const Home = () => {
         <div className="container relative z-2">
           <div className="row gx-5">
             <div className="col-lg-5">
-              <img src={whiteLogo} className="w-200px" alt="logo" />
+              <Link to="/" onClick={handleHomeClick}>
+                <img src={whiteLogo} className="w-200px" alt="logo" />
+              </Link>
+
               <div className="spacer-20"></div>
               <p>
                 Transform your kitchen with our premium teff flour! From farm to
