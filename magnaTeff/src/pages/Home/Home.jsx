@@ -7,11 +7,11 @@ import teffPic1 from "../../assets/images/misc/magna-teff-8.webp";
 import hanikLogo from "../../assets/images/logo/Hanik-logo.webp";
 import aboutPic1 from "../../assets/images/misc/happy-ethiopian-farmer.webp";
 import callToAction from "../../assets/images/misc/bg.webp";
-import glutenFree from "../../assets/images/misc/gluten-free.webp";
+import glutenFree from "../../assets/images/misc/gluten-free (1).webp";
 import whiteTeffPackage from "../../assets/images/misc/white-teff-package.webp";
 import brownTeffPackage from "../../assets/images/misc/brown-teff-pack.webp";
 import sergegnaTeffPackage from "../../assets/images/misc/sergegna-teff-package.webp";
-import ethiopianTeff from "../../assets/images/misc/ethiopian-teff.webp";
+import ethiopianTeff from "../../assets/images/misc/magna-teff-2.webp";
 import teffFlour from "../../assets/images/misc/magna-teff-3.webp";
 import plantIcon from "../../assets/images/logo/logo-icon.webp";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -27,6 +27,7 @@ import {
   FaInstagram,
   FaMedal,
   FaRegClock,
+  FaUserTie,
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa6";
@@ -649,8 +650,8 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="col-lg-6">
-              <div className="relative d-flex justify-content-center gluten-free-picture rounded-5">
+            <div className="col-lg-6 d-flex justify-content-center">
+              <div className="relative d-flex justify-content-center gluten-free-picture rounded-5 w-80">
                 <img src={ethiopianTeff} alt="healthy-family" />
               </div>
             </div>
@@ -833,6 +834,14 @@ const Home = () => {
                     </div>
                     <a href="mailto:contact@magna-teff.com">
                       contact@magna-teff.com
+                    </a>
+                    <div className="spacer-20"></div>
+                    <div className="fw-bold text-dark">
+                      <FaUserTie size={20} className="me-2" />
+                      CEO: Semahegn Getachew
+                    </div>
+                    <a href="mailto:simonget01@gmail.com">
+                      simonget01@gmail.com
                     </a>
                     <div className="social-icons mt-3">
                       <Link to="#">
