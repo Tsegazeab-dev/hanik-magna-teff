@@ -22942,6 +22942,9 @@ img {
 }
 
 /* Custom styles */
+#logo{
+  width: 80px;
+}
 .developed-by-logo {
   width: 40px;
   height: 40px;
@@ -23015,4 +23018,7 @@ img {
   .gluten-free-picture img {
     width: 100%;
   }
+  #logo{
+  width: 90px;
+}
 }

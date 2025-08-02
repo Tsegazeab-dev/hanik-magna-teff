@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
-import logo from "../../assets/images/logo/logo-magna-teff.webp";
+import logo from "../../assets/images/logo/magna-logo.webp";
 import whiteLogo from "../../assets/images/logo/logo-magna-white.webp";
 import injeraPic1 from "../../assets/images/misc/injera.webp";
 import teffPic1 from "../../assets/images/misc/magna-teff-8.webp";
@@ -120,7 +120,7 @@ const Home = () => {
         <div className="container">
           <div className="row d-flex align-items-center header-content">
             <div className="col-md-12">
-              <div className="de-flex sm-pt10 align-items-center">
+              <div className="de-flex align-items-center py-2">
                 <div className="de-flex-col">
                   {/*  Logo   */}
                   <div id="logo">
@@ -942,9 +942,9 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-4"></div>
-            <div className="d-none col-lg-3 order-lg-2 order-sm-1 d-lg-flex justify-content-center align-items-center">
-              <div className="widget">
+            <div className="col-lg-3"></div>
+            <div className="d-none col-lg-4 order-lg-2 order-sm-1 d-lg-flex justify-content-center align-items-center">
+              <div className="widget pb-0">
                 <div>
                   <FaRegClock className="me-2" />
                   We're Open
