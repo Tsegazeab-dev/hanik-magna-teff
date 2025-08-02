@@ -1979,7 +1979,7 @@ header.header-mobile {
   /* background: #f6e0c6; */
   background: var(--background);
   top: 0;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 header.header-mobile.logo-center {
